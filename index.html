@@ -12,23 +12,47 @@
   <meta name="description" content="Check the stuff of the browser">
   <meta name="author" content="Kristupas Stumbrys">
   <style>
+    body {
+      margin: 0;
+    }
+
+    #panel {
+      position: fixed;
+      width: 100%;
+      background-color: #ccc;
+      z-index: 1;
+    }
+
     #box {
+      position: relative;
       height: 100px;
       width: 100%;
       background-color: black;
+      color: white;
     }
 
     #box.big {
-      height: 1000px;
+      height: 2000px;
+    }
+
+    #box * {
+      position: absolute;
+      bottom: 0;
+      margin: 0;
     }
   </style>
 </head>
 
 <body>
-  <p id="window-info"></p>
-  <p id="document-info"></p>
-  <button id="box-button"></button>
-  <div id="box"></div>
+  <div id="panel">
+    <p id="window-info"></p>
+    <p id="document-info"></p>
+    <button id="box-button">TOGGLE BOX</button>
+  </div>
+
+  <div id="box">
+    <p>Bottom</p>
+  </div>
 
   <script>
     let windowInfo = document.querySelector("#window-info");
