@@ -13,6 +13,12 @@
   <meta name="author" content="Kristupas Stumbrys">
   <style>
     #box {
+      height: 100px;
+      width: 100%;
+      background-color: black;
+    }
+
+    #box.big {
       height: 1000px;
     }
   </style>
@@ -21,16 +27,23 @@
 <body>
   <p id="window-info"></p>
   <p id="document-info"></p>
+  <button id="box-button"></button>
   <div id="box"></div>
 
   <script>
     let windowInfo = document.querySelector("#window-info");
     let documentInfo = document.querySelector("#document-info");
+    let box = document.querySelector("#box");
+    let boxButton = document.querySelector("#box-button");
 
     setInterval(() => {
       windowInfo.textContent = "WINDOW: width: " + window.innerWidth + " height: " + window.innerHeight;
       documentInfo.textContent = "DOCUMENT: width: " + document.documentElement.offsetWidth + " height: " + document.documentElement.offsetHeight;
     }, 10);
+
+    boxButton.addEventListener("click", (e) => {
+      box.classList.toggle("big");
+    });
 
 
   </script>
