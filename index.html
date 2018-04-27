@@ -11,16 +11,25 @@
   <title>HTML info test</title>
   <meta name="description" content="Check the stuff of the browser">
   <meta name="author" content="Kristupas Stumbrys">
+  <style>
+    #box {
+      height: 1000px;
+    }
+  </style>
 </head>
 
 <body>
-  <p id="dimensions"></p>
+  <p id="window-info"></p>
+  <p id="document-info"></p>
+  <div id="box"></div>
 
   <script>
-    let dimensionsDOM = document.querySelector("#dimensions");
+    let windowInfo = document.querySelector("#window-info");
+    let documentInfo = document.querySelector("#document-info");
 
     setInterval(() => {
-      dimensionsDOM.textContent = "width: " + window.innerWidth + " height: " + window.innerHeight;
+      windowInfo.textContent = "WINDOW: width: " + window.innerWidth + " height: " + window.innerHeight;
+      documentInfo.textContent = "DOCUMENT: width: " + document.documentElement.innerWidth + " height: " + document.documentElement.innerHeight;
     }, 10);
 
 
