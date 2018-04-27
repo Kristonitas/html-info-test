@@ -29,7 +29,7 @@
 
     setInterval(() => {
       windowInfo.textContent = "WINDOW: width: " + window.innerWidth + " height: " + window.innerHeight;
-      documentInfo.textContent = "DOCUMENT: width: " + document.documentElement.innerWidth + " height: " + document.documentElement.innerHeight;
+      documentInfo.textContent = "DOCUMENT: width: " + document.documentElement.offsetWidth + " height: " + document.documentElement.offsetHeight;
     }, 10);
 
 
