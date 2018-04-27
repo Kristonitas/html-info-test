@@ -1,0 +1,30 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <title>HTML info test</title>
+  <meta name="description" content="Check the stuff of the browser">
+  <meta name="author" content="Kristupas Stumbrys">
+</head>
+
+<body>
+  <div id="dimensions"></div>
+
+  <script>
+    let dimensionsDOM = document.querySelector("#dimensions");
+
+    setInterval(() => {
+      dimensionsDOM.textContent = "width: " + window.innerWidth + " height: " + window.innerHeight;
+    }, 10);
+
+
+  </script>
+</body>
+
+</html>
